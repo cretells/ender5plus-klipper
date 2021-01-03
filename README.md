@@ -41,8 +41,10 @@ Just in case you miss the sound if whining motors and poorly translated buggy fi
 # with that SD card.
 ```
 ### Printer Configuration 
-- `printer.cfg` is a fork of https://github.com/KevinOConnor/klipper/blob/master/config/generic-bigtreetech-skr-pro.cfg
-with my modifications for 
+- `printer.cfg` is a fork of 
+
+https://github.com/KevinOConnor/klipper/blob/master/config/generic-bigtreetech-skr-pro.cfg
+with my modifications specifically for the Ender 5 Plus
 
 #### Pinouts
 Fans: 
@@ -67,16 +69,20 @@ My Result:
 
 ### Retraction Calibration
 
-TeachingTech has a great resource for retraction calibration. https://teachingtechyt.github.io/calibration.html#esteps
+TeachingTech has a great resource for retraction calibration.
 
-My Result: 1.2mm in Cura Slicer 
+https://teachingtechyt.github.io/calibration.html#esteps
+
+My Result: `1.2mm`  (this is actually tracked in slicer settings)
 
 #### Input Shaping
 
 *This needs to be run on each printer, since it is directly dependent on resonance of the machine during high accelration operation*
 
 My Result:
+
 X- 2/((2.24+2.2+2.31)/3)*180 = 160Hz
+
 Y- 4/((3.93+3.98+3.75)/3)*180 = 185.24Hz
 
 ```
@@ -85,5 +91,10 @@ shaper_freq_x: 160  # frequency for the X mark of the test model
 shaper_freq_y: 185.24  # frequency for the Y mark of the test model
 ```
 #### Pressure Advance
+
+* Extruder calibration should happen first before this*
+
+My Result: `pressure_advance: 0.1261`
+
 
 
