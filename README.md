@@ -16,16 +16,16 @@ Hardware Configuration:
     - Octopi (Raspbian Based) Linux distro
 - Miuzei 4" Touch Screen display
 
-### Original Wiring Photos
+## Original Wiring Photos
 
-Just in case you miss the sound if whining motors and poorly translated buggy firmwareL: 
- ![mainboard](https://github.com/cretells/ender5plus-klipper/blob/main/wiring-original/mainboard.jpeg?raw=true)
+Just in case you miss the sound if whining motors and poorly translated buggy firmware: 
+ ![mainboard](https://github.com/cretells/ender5plus-klipper/blob/main/wiring-original/mainboard-hbfet-tft.jpeg?raw=true)
  See https://github.com/cretells/ender5plus-klipper/tree/main/wiring-original
 
-### Wiring Diagram
+## Wiring Diagram
 
 
-### Firmware Configuration
+## Firmware Configuration
 - Clone from Klipper Github repo (from RPi):
     `git clone https://github.com/KevinOConnor/klipper`
 
@@ -40,7 +40,7 @@ Just in case you miss the sound if whining motors and poorly translated buggy fi
 # file named "firmware.bin" on an SD card and then restart the SKR PRO
 # with that SD card.
 ```
-### Printer Configuration 
+## Printer Configuration 
 - `printer.cfg` is a fork of 
 
 https://github.com/KevinOConnor/klipper/blob/master/config/generic-bigtreetech-skr-pro.cfg
@@ -56,10 +56,10 @@ Fans:
 
 By now, you should have Klipper running on your 3DPrinter and `G28` will properly home the device (all motors have been confirmed functional)
 
-#### Hotend / Bed PID
+### Hotend / Bed PID
 `TBD`
 
-#### Extruder Calibration
+### Extruder Calibration
 Extruder calibration is needed to ensure correct amount of filament is extruded during printing. It may be dependent on extruder configuration and gearing. Calibration can be done as follows:
 
 https://www.klipper3d.org/Rotation_Distance.html#calibrating-rotation_distance-on-extruders
@@ -75,7 +75,7 @@ https://teachingtechyt.github.io/calibration.html#esteps
 
 My Result: `1.2mm`  (this is actually tracked in slicer settings)
 
-#### Input Shaping
+### Input Shaping
 
 *This needs to be run on each printer, since it is directly dependent on resonance of the machine during high accelration operation*
 
@@ -90,9 +90,9 @@ Y- 4/((3.93+3.98+3.75)/3)*180 = 185.24Hz
 shaper_freq_x: 160  # frequency for the X mark of the test model
 shaper_freq_y: 185.24  # frequency for the Y mark of the test model
 ```
-#### Pressure Advance
+### Pressure Advance
 
-* Extruder calibration should happen first before this*
+*Extruder calibration should happen first before this*
 
 My Result: `pressure_advance: 0.1261`
 
