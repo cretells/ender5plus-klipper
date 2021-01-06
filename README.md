@@ -14,7 +14,7 @@ Hardware Configuration:
 - 4x TMC2208 UART based drivers
 - Raspberry Pi 4 (4GB DRAM)
     - Octopi (Raspbian Based) Linux distro
-- Miuzei 4" Touch Screen display
+- [Miuzei 4" Touch Screen display](https://www.amazon.com/Miuzei-Raspberry-Full-Angle-Heatsinks-Raspbian/dp/B07XBVF1C9)
 
 ## Original Wiring Photos
 
@@ -97,4 +97,28 @@ shaper_freq_y: 185.24  # frequency for the Y mark of the test model
 My Result: `pressure_advance: 0.1261`
 
 
+
+## Raspberry Pi Configuration
+
+1. Download Raspbian vanilla image from [here](https://www.raspberrypi.org/software/)
+2. Image 64GB SD Card or larger with Rasbian image
+3. Install drivers for Miuzei Display
+    `git clone https://github.com/goodtft/LCD-show`
+4. Install Klipper service
+    `git clone https://github.com/KevinOConnor/klipper
+    ./klipper/scripts/install-octopi.sh`
+5. Install Moonraker service
+    `git clone https://github.com/Arksine/moonraker.git`
+    _note: if you have IPv6, you will need to add your IPv6 prefix to the trusted clients list, or just remove authenication entirely_
+6. Install [Mainsail](https://docs.mainsail.app/setup/mainsail)
+7. Install [KlipperScreen](https://github.com/jordanruthe/KlipperScreen)
+Weirdness:
+    - Have to disable lightdm in raspi-config
+    - vext wheel generation failed during the initial setup script
+    - had to modify `/etc/systemd/system/KlipperScreen.service` to change user to root
+    
+8. Install Webcam
+- `sudo raspi-config` to enable webcam
+- Follow [these directions](https://3dp.tumbleweedlabs.com/firmware/klipper-firmware/adding-webcam-support-to-mainsail)
+    
 
